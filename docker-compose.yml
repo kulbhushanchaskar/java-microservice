@@ -11,7 +11,7 @@ services:
 
  # https://pgpedia.info/postgresql-versions/postgresql-12.html
   postgres:
-    image: wktaade.azurecr.io/cache/postgres:12.15-alpine3.18
+    image: <postgre_image>
     container_name: postgres12_15_dev
     restart: on-failure:3
     ports:
@@ -34,7 +34,7 @@ services:
 
   pgadmin:
     restart: on-failure:3
-    image: wktaade.azurecr.io/cache/pgadmin4:6
+    image: <pg_admin_image>
     depends_on:
       - postgres
     environment:
