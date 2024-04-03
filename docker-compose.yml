@@ -2,8 +2,8 @@ version: "3.9"
 
 # external fixed network to share with other container instances
 networks:
-  sdn:
-    name: sdn
+  javams:
+    name: javams
     driver: bridge
 
 
@@ -21,7 +21,7 @@ services:
         POSTGRES_PASSWORD: Did2.PfdPU.
         POSTGRES_INITDB_ARGS: --encoding=UTF-8 --lc-collate=de_DE.UTF-8 --lc-ctype=de_DE.UTF-8
     volumes:
-      - ~/.sdn-container/postgres:/var/lib/postgresql/data
+      - ~/.javams-container/postgres:/var/lib/postgresql/data
       - ./pginitdb.sh:/docker-entrypoint-initdb.d/init.sh:ro
     logging:
       driver: json-file
@@ -29,7 +29,7 @@ services:
         max-size: "10m"
         max-file: "3"
     networks:
-      - sdn
+      - javams
 
 
   pgadmin:
@@ -38,15 +38,15 @@ services:
     depends_on:
       - postgres
     environment:
-      PGADMIN_DEFAULT_EMAIL: admin@sdn.com
+      PGADMIN_DEFAULT_EMAIL: admin@javams.com
       PGADMIN_DEFAULT_PASSWORD: admin
     ports:
       - 8040:80
     volumes:
-      - ~/.sdn-container/pgadmin:/root/.pgadmin
+      - ~/.javams-container/pgadmin:/root/.pgadmin
       - ./pgadmin.json:/pgadmin4/servers.json:ro
     networks:
-      - sdn
+      - javams
       
   zipkin:
     image: openzipkin/zipkin
@@ -54,7 +54,7 @@ services:
     ports:
       - 9411:9411
     networks:
-      - sdn
+      - javams
       
   rabbitmq:
     image: rabbitmq:3-management
@@ -63,4 +63,4 @@ services:
       - 5672:5672
       - 15672:15672
     networks:
-      - sdn
+      - javams
