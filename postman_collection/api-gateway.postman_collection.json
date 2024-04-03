@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "eb542b20-f241-4074-8a8b-eddb943e33c3",
+		"name": "api-gateway",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33520002"
+	},
+	"item": [
+		{
+			"name": "createCompany",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"wk\",\r\n    \"description\": \"tax & acc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCompany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createJob",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n   \r\n   \"title\":\"job1\",\r\n   \"description\":\"job1 desc\",\r\n   \"minSalary\":\"1000\",\r\n   \"maxSalary\":\"1010\",\r\n   \"location\":\"pune\",\r\n   \"companyId\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "createReview",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"title\":\"review 1\",\r\n    \"description\":\"review desc 1\",\r\n    \"rating\":\"5\",\r\n    \"companyId\":\"1\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8084/reviews",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"reviews"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllJobs",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8084/jobs",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8084",
+					"path": [
+						"jobs"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}

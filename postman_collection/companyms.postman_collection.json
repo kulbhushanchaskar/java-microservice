@@ -1,0 +1,57 @@
+{
+	"info": {
+		"_postman_id": "95a783b0-fa64-44aa-a857-ec55288b8621",
+		"name": "companyms",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "33520002"
+	},
+	"item": [
+		{
+			"name": "createCompany",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"name\":\"wk\",\r\n    \"description\": \"tax & acc\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:8081/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAllCompany",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:8081/companies",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8081",
+					"path": [
+						"companies"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
