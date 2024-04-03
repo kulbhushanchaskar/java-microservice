@@ -18,7 +18,7 @@ services:
       - "5432:5432"
     environment:
         POSTGRES_USER: postgres
-        POSTGRES_PASSWORD: Did2.PfdPU.
+        POSTGRES_PASSWORD: postgres_admin
         POSTGRES_INITDB_ARGS: --encoding=UTF-8 --lc-collate=de_DE.UTF-8 --lc-ctype=de_DE.UTF-8
     volumes:
       - ~/.javams-container/postgres:/var/lib/postgresql/data
